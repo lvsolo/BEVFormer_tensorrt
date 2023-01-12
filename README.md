@@ -160,12 +160,17 @@ pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 torchaudio==0.12.1+cu1
 
 #### MMCV-full
 
+```
+#https://mmcv.readthedocs.io/en/latest/get_started/installation.html
+pip install mmcv-full==1.6.1 -f https://download.openmmlab.com/mmcv/dist/cu116/torch1.12/index.html
+```
+
 ```shell
-git clone https://github.com/open-mmlab/mmcv.git
-cd mmcv
-git checkout v1.5.0
-pip install -r requirements/optional.txt
-MMCV_WITH_OPS=1 pip install -e .
+#git clone https://github.com/open-mmlab/mmcv.git
+#cd mmcv
+#git checkout v1.5.0
+#pip install -r requirements/optional.txt
+#MMCV_WITH_OPS=1 pip install -e .
 ```
 
 #### MMDetection
@@ -238,6 +243,12 @@ cmake .. -DCMAKE_TENSORRT_PATH=/path/to/TensorRT
 make -j$(nproc)
 make install
 ```
+##### Build and Install Part of Ops in MMDetection3D
+
+```shell
+cd ${PROJECT_DIR}/third_party/bevformer
+python setup.py build develop
+```
 
 **Run Unit Test of  Custom TensorRT Plugins**
 
@@ -246,12 +257,7 @@ cd ${PROJECT_DIR}
 sh samples/test_trt_ops.sh
 ```
 
-##### Build and Install Part of Ops in MMDetection3D
 
-```shell
-cd ${PROJECT_DIR}/third_party/bevformer
-python setup.py build develop
-```
 
 #### Prepare the Checkpoints
 
