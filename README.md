@@ -250,6 +250,10 @@ cd ${PROJECT_DIR}/third_party/bevformer
 python setup.py build develop
 ```
 
+```shell 
+pip install pycuda numba trimesh nuscenes-devkit
+```
+
 **Run Unit Test of  Custom TensorRT Plugins**
 
 ```shell
